@@ -2,3 +2,6 @@ fastapi==0.109.2
 starlette==0.36.3
 starlette_exporter==0.20.0
 uvicorn==0.23.2
+azure-eventhub==5.11.5
+azure-identity==1.15.0
+aiohttp==3.9.1
