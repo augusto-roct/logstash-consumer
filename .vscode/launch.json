@@ -1,0 +1,14 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: FastAPI",
+      "request": "launch",
+      "type": "debugpy",
+      "module": "uvicorn",
+      "cwd": "${workspaceFolder}",
+      "args": ["logstash_consumer.app.main:app", "--reload"],
+      "justMyCode": true
+    }
+  ]
+}
