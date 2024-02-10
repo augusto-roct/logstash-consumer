@@ -7,7 +7,7 @@ from logstash_consumer.app.utils.log import LogApplication
 router = APIRouter()
 
 
-@router.post("/", status_code=200)
+@router.post("", status_code=200)
 async def consumer_log_stash(
     request: Request,
     payload: dict

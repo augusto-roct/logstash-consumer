@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from starlette_exporter import PrometheusMiddleware, handle_metrics
 
@@ -17,6 +17,13 @@ app = FastAPI(
     description="Microsservice to consumer logs in logstash and send for Azure Event Hubs",
     openapi_tags=openapi_tags
 )
+
+
+@app.middleware("http")
+async def add_process_time_header(request: Request, call_next):
+    print(request)
+    response = await call_next(request)
+    return response
 
 app.add_middleware(PrometheusMiddleware)
 
